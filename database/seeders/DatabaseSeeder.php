@@ -1,9 +1,12 @@
 <?php
 
 namespace Database\Seeders;
+use App\Models\User;
+use App\Models\Book;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,9 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        User::truncate(); //Delete previous data of database
+        User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
+        Book::truncate();
+        Book::factory(1000)->create();
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
